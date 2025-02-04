@@ -63,3 +63,11 @@ if command -v yazi >/dev/null 2>&1; then
         rm -f -- "$tmp"
     }
 fi
+
+function ssh() {
+    if [[ -n "$KITTY_WINDOW_ID" ]]; then
+        command kitty +kitten ssh "$@"
+    else
+        command ssh "$@"
+    fi
+}
