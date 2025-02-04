@@ -1,6 +1,5 @@
-echo "Hello $(print -P  %F{yellow}$(whoami)!%f)"
-echo "Today is $(print -P %F{yellow}$(date '+%A, %d %B %Y | %T')%f) 🌞, Have a great day ahead! 😊"
-echo ""
+echo "Hello $(print -P  %F{yellow}$(whoami)%f)"
+echo "Today is $(print -P %F{yellow}$(date '+%A, %d %B %Y | %T')%f), Have a great day ahead\n"
 
 export PATH="$HOME/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
@@ -47,10 +46,13 @@ fi
 if command -v nvim >/dev/null 2>&1; then
     alias vim="nvim"
     export EDITOR="nvim"
-
 else
     alias vim="vim"
     export EDITOR="vim"
+fi
+
+if command -v fastfetch >/dev/null 2>&1; then
+    alias fetch="fastfetch"
 fi
 
 if command -v yazi >/dev/null 2>&1; then
